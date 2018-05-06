@@ -1,8 +1,6 @@
 #The libraries we are going to use are PySerial and Time
-
 # PySerial is encapsulates the access for the serial port.
-# Documentación: https://pythonhosted.org/pyserial/
-
+# 
 import serial
 import time
 
@@ -17,26 +15,31 @@ import time
 # 1500000, 2000000, 2500000, 3000000, 3500000, 4000000 also work on many platforms and devices.
 # Non-standard values are also supported on some platforms (GNU/Linux, MAC OSX >= Tiger, Windows).
 # - Possible values for the parameter timeout which controls the behavior of read():
-# • timeout = None: wait forever / until requested number of bytes are received
-# • timeout = 0:  non-blocking mode, return immediately in any case, returning zero or more, up to
+# .. timeout = None: wait forever until requested number of bytes are received
+# .. timeout = 0:  non-blocking mode, return immediately in any case, returning zero or more, up to
 # the requested number of bytes
-# • timeout = x:  set timeout to x seconds (float allowed) returns immediately when the requested
+# .. timeout = x:  set timeout to x seconds (float allowed) returns immediately when the requested
 # number of bytes are available, otherwise wait until the timeout expires and return all bytes that were
 # received until then.
-
-DEMOQE_read = serial.Serial('/dev/ttyACM0', 19200, timeout=1)
-
+DEMOQE_read = serial.Serial('/dev/ttyACM0',9600,timeout=5);
+print(DEMOQE_read.isOpen())
+while True:
+	try:
 # To find the Serial port direction we can get the name typing python in the terminal:
 # $ python -m serial.tools.list_ports -v
 # NOTE: The microcontroller must be connected
 
 # El motivo de utilizar sleep desde es que desde que se crea el objeto Serial hasta que esta disponible
 # para ser usado, se necesita un cierto tiempo para abrir el puerto serie. Por tanto, se introduce 
-# una espera mediante la función “Sleep”, que pertenece a la librería “time”.
-time.sleep(2)
-# .readline() help us to read the line sended from the microcontroller.
-rawString = DEMOQE_read.readline()
-# print() muestra la línea en la pantalla
-print(rawString)
+# una espera mediante la funcion Sleep, que pertenece a la libreria time
+		time.sleep(2)
+## .readline() help us to read the line sended from the microcontroller.
+		String = DEMOQE_read.readline()
+# print() muestra la linea en la pantalla
+		print(String)
 # To close the serial port we introced .close() for the class
-DEMOQE_read.close()
+	#DEMOQE_read.close()
+	except:
+		print("Keyboard interrupt")
+		break
+	
