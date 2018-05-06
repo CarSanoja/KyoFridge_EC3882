@@ -24,4 +24,15 @@ import time
 # number of bytes are available, otherwise wait until the timeout expires and return all bytes that were
 # received until then.
 
-DEMOQE_read = serial.Serial('/dev/ttyS1', 19200, timeout=1)
+DEMOQE_read = serial.Serial('/dev/ttyACM0', 19200, timeout=1)
+
+# To find the Serial port direction we can get the name typing python in the terminal:
+# $ python -m serial.tools.list_ports -v
+# NOTE: The microcontroller must be connected
+
+# El motivo es que desde que creamos el objeto Serial hasta realmente está disponible para ser usado, 
+# se necesita un cierto tiempo para abrir el puerto serie. Por tanto, tenemos que introducir una 
+# espera mediante la función “Sleep”, que pertenece a la librería “time”.
+time.sleep(2)
+
+
