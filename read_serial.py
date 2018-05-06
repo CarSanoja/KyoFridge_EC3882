@@ -7,6 +7,11 @@ import time
 from graph import *
 # Matplotlib to draw functions
 import matplotlib.pyplot as plt
+# To allow make live data graph we need drawnow
+# pip install drawnow
+from drawnow import *
+
+
 # Opening a Serial port
 
 # - The port is immediately opened on object creation, when a port is given. It is not opened when
