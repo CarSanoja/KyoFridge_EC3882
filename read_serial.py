@@ -36,4 +36,7 @@ DEMOQE_read = serial.Serial('/dev/ttyACM0', 19200, timeout=1)
 time.sleep(2)
 # .readline() help us to read the line sended from the microcontroller.
 rawString = DEMOQE_read.readline()
-
+# print() muestra la línea en la pantalla
+print(rawString)
+# To close the serial port we introced .close() for the class
+DEMOQE_read.close()
