@@ -5,5 +5,5 @@ def MakeFig(senal): #Create a function that makes our desired plot
     plt.title('Live Streaming from DemoQE')      #Plot the title
     plt.grid(True)                                  #Turn the grid on
     plt.ylabel('Amplitud')                            #Set ylabels
-    plt.plot(senal, 'ro-', label='Value')       #plot the temperature
+    plt.plot(senal, 'b-', label='Value')       #plot the temperature
     plt.legend(loc='upper left')                    #plot the legend
