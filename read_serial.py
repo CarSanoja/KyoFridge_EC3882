@@ -34,8 +34,6 @@ DEMOQE_read = serial.Serial('/dev/ttyACM0', 19200, timeout=1)
 # para ser usado, se necesita un cierto tiempo para abrir el puerto serie. Por tanto, se introduce 
 # una espera mediante la función “Sleep”, que pertenece a la librería “time”.
 time.sleep(2)
-
-
+# .readline() help us to read the line sended from the microcontroller.
 rawString = DEMOQE_read.readline()
-print(rawString)
-DEMOQE_read.close()
+
