@@ -30,9 +30,12 @@ DEMOQE_read = serial.Serial('/dev/ttyACM0', 19200, timeout=1)
 # $ python -m serial.tools.list_ports -v
 # NOTE: The microcontroller must be connected
 
-# El motivo es que desde que creamos el objeto Serial hasta realmente está disponible para ser usado, 
-# se necesita un cierto tiempo para abrir el puerto serie. Por tanto, tenemos que introducir una 
-# espera mediante la función “Sleep”, que pertenece a la librería “time”.
+# El motivo de utilizar sleep desde es que desde que se crea el objeto Serial hasta que esta disponible
+# para ser usado, se necesita un cierto tiempo para abrir el puerto serie. Por tanto, se introduce 
+# una espera mediante la función “Sleep”, que pertenece a la librería “time”.
 time.sleep(2)
 
 
+rawString = DEMOQE_read.readline()
+print(rawString)
+DEMOQE_read.close()
