@@ -37,16 +37,18 @@ while True:
 # NOTE: The microcontroller must be connected
 
 # Conditional to check if we have data to receive
-		while (arduinoData.inWaiting()==0): #Wait here until there is data
+		while (DEMOQE_read.inWaiting()==0): #Wait here until there is data
         	pass
 # El motivo de utilizar sleep desde es que desde que se crea el objeto Serial hasta que esta disponible
 # para ser usado, se necesita un cierto tiempo para abrir el puerto serie. Por tanto, se introduce 
 # una espera mediante la funcion Sleep, que pertenece a la libreria time
 		time.sleep(2)
 ## .readline() help us to read the line sended from the microcontroller.
-		String = DEMOQE_read.readline()
+		input_value = DEMOQE_read.readline()
 # print() muestra la linea en la pantalla
-		print(String)
+		print(value)
+# We need float numbers 
+		input_signal.append(float(input_value))
 # To close the serial port we introced .close() for the class
 	#DEMOQE_read.close()
 	except:
