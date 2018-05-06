@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 # received until then.
 DEMOQE_read = serial.Serial('/dev/ttyACM0',9600,timeout=5);
 print(DEMOQE_read.isOpen())
-# Set the matplotlib parameters
+# Set the matplotlib parameters, initializing
 plt.ion() # Modo interactivo de matplotlib
 input_signal = [] #Entrada al graficador 
 
@@ -36,6 +36,9 @@ while True:
 # $ python -m serial.tools.list_ports -v
 # NOTE: The microcontroller must be connected
 
+# Conditional to check if we have data to receive
+		while (arduinoData.inWaiting()==0): #Wait here until there is data
+        	pass
 # El motivo de utilizar sleep desde es que desde que se crea el objeto Serial hasta que esta disponible
 # para ser usado, se necesita un cierto tiempo para abrir el puerto serie. Por tanto, se introduce 
 # una espera mediante la funcion Sleep, que pertenece a la libreria time
