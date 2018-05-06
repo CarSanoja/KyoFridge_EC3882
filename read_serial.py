@@ -3,7 +3,10 @@
 # 
 import serial
 import time
-
+# script that allow to set the graphs for the signal
+from graph import *
+# Matplotlib to draw functions
+import matplotlib.pyplot as plt
 # Opening a Serial port
 
 # - The port is immediately opened on object creation, when a port is given. It is not opened when
@@ -23,6 +26,10 @@ import time
 # received until then.
 DEMOQE_read = serial.Serial('/dev/ttyACM0',9600,timeout=5);
 print(DEMOQE_read.isOpen())
+# Set the matplotlib parameters
+plt.ion() # Modo interactivo de matplotlib
+input_signal = [] #Entrada al graficador 
+
 while True:
 	try:
 # To find the Serial port direction we can get the name typing python in the terminal:
