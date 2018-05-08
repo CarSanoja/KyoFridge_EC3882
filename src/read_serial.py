@@ -9,7 +9,7 @@ from graph import *
 import matplotlib.pyplot as plt
 # To allow make live data graph we need drawnow
 # pip install drawnow
-from drawnow import *
+#from drawnow import *
 
 
 # Opening a Serial port
@@ -29,12 +29,11 @@ from drawnow import *
 # .. timeout = x:  set timeout to x seconds (float allowed) returns immediately when the requested
 # number of bytes are available, otherwise wait until the timeout expires and return all bytes that were
 # received until then.
-DEMOQE_read = serial.Serial('/dev/ttyACM0',9600,timeout=5);
+DEMOQE_read = serial.Serial('/dev/ttyACM0',9600,timeout=1);
 print(DEMOQE_read.isOpen())
 # Set the matplotlib parameters, initializing
 plt.ion() # Modo interactivo de matplotlib
 input_signal = [] #Entrada al graficador 
-
 while True:
 	try:
 # To find the Serial port direction we can get the name typing python in the terminal:
@@ -42,21 +41,27 @@ while True:
 # NOTE: The microcontroller must be connected
 
 # Conditional to check if we have data to receive
-		while (DEMOQE_read.inWaiting()==0): #Wait here until there is data
-        	pass
+		while (DEMOQE_read.inWaiting()==0):
+			print("no data") #Wait here until there is data
+			pass
 # El motivo de utilizar sleep desde es que desde que se crea el objeto Serial hasta que esta disponible
 # para ser usado, se necesita un cierto tiempo para abrir el puerto serie. Por tanto, se introduce 
 # una espera mediante la funcion Sleep, que pertenece a la libreria time
-		time.sleep(2)
+		time.sleep(1)
+		print("voy a leer")
 ## .readline() help us to read the line sended from the microcontroller.
-		input_value = DEMOQE_read.readline()
+		data_input = DEMOQE_read.readline()
+		print(type(data_input))
+		print(data_input[0])
+		print(len(data_input))
+		#input_value = DEMOQE_read.readline()
+		
 # print() muestra la linea en la pantalla
-		print(value)
+		#print(input_value)
 # We need float numbers 
-		input_signal.append(float(input_value))
+		#input_signal.append(float(input_value))
 # To close the serial port we introced .close() for the class
-	#DEMOQE_read.close()
+		#DEMOQE_read.close()
 	except:
 		print("Keyboard interrupt")
 		break
-	
