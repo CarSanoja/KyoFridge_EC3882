@@ -1,0 +1,37 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_Compiler_SearchUserPaths</name>
+      <values lines_count="2">
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="Sources/Events.h" FileDate="2018-05-12, 23:29:38" FileAge="1526183978209" FileType="131328" />
+      <File Name="Generated_Code/TI1.c" FileDate="2018-05-12, 10:28:26" FileAge="1526137106700" FileType="45637" CompNumb="24" />
+      <File Name="Generated_Code/Cpu.h" FileDate="2018-05-12, 10:28:26" FileAge="1526137106647" FileType="45637" CompNumb="4" />
+      <File Name="Sources/Events.c" FileDate="2018-05-11, 18:53:16" FileAge="1526080996000" FileType="131328" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2018-05-12, 10:28:26" FileAge="1526137106641" FileType="45637" CompNumb="4" />
+      <File Name="Documentation/Test3_SIGNALS.txt" FileDate="2018-05-13, 09:00:50" FileAge="1526218250489" FileType="3072" />
+      <File Name="Generated_Code/Vectors.c" FileDate="2018-05-12, 10:28:26" FileAge="1526137106619" FileType="45637" CompNumb="4" />
+      <File Name="Sources/main.c" FileDate="2018-05-13, 09:00:50" FileAge="1526218250461" FileType="128" />
+      <File Name="Generated_Code/PE_Const.h" FileDate="2018-05-12, 10:28:26" FileAge="1526137106672" FileType="45637" />
+      <File Name="Documentation/Test3.txt" FileDate="2018-05-12, 10:28:26" FileAge="1526137106835" FileType="3072" />
+      <File Name="Documentation/Test3_Settings.xml" FileDate="2018-05-12, 10:28:26" FileAge="1526137106807" FileType="3072" />
+      <File Name="Generated_Code/AD1.h" FileDate="2018-05-12, 10:28:26" FileAge="1526137106728" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/AD1.c" FileDate="2018-05-12, 10:28:26" FileAge="1526137106716" FileType="45637" CompNumb="9" />
+      <File Name="Project_Settings/Linker_Files/ProcessorExpert.prm" FileDate="2018-05-12, 10:28:26" FileAge="1526137106627" FileType="8" CompNumb="4" />
+      <File Name="Generated_Code/PE_Types.h" FileDate="2018-05-12, 10:28:26" FileAge="1526137106689" FileType="45637" />
+      <File Name="Generated_Code/AS1.h" FileDate="2018-05-12, 10:28:26" FileAge="1526137106748" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/IO_Map.h" FileDate="2018-05-12, 10:28:26" FileAge="1526137106667" FileType="45637" />
+      <File Name="Generated_Code/AS1.c" FileDate="2018-05-12, 10:28:26" FileAge="1526137106738" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/PE_Error.h" FileDate="2018-05-12, 10:28:26" FileAge="1526137106676" FileType="45637" />
+      <File Name="Generated_Code/IO_Map.c" FileDate="2018-05-12, 10:28:26" FileAge="1526137106657" FileType="45637" />
+      <File Name="Generated_Code/TI1.h" FileDate="2018-05-12, 10:28:26" FileAge="1526137106705" FileType="45637" CompNumb="24" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>4</CodeGenReference>
+</CodeGenerationInfo>
