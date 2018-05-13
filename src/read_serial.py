@@ -52,7 +52,6 @@ while True:
 ## .readline() help us to read the line sended from the microcontroller.
 		data_input = DEMOQE_read.readline()
 		print(type(data_input))
-		print(data_input[0])
 		print(len(data_input))
 		#input_value = DEMOQE_read.readline()
 		
