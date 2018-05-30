@@ -50,8 +50,6 @@ file_read = file.read()
 file_splitted = file_read.split("\n")
 len_file = len(file_splitted)
 
-
-
 fig, ax = plt.subplots()
 scope = Scope(ax)
 
