@@ -8,6 +8,7 @@ import cv2
 def nothing():
     pass 
 
+
 class Scope(object):
     def __init__(self, ax, maxt=0.5, dt=0.001):
         self.ax = ax
@@ -17,6 +18,7 @@ class Scope(object):
         self.ydata = [0]
         self.line = Line2D(self.tdata, self.ydata)
         self.ax.add_line(self.line)
+        
         self.ax.set_ylim(0, 2)
         self.ax.set_xlim(0, self.maxt)
         self.len_file_aux = 2
