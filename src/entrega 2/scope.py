@@ -42,7 +42,7 @@ class Scope(object):
             self.ax.figure.canvas.draw()
         t = self.tdata[-1] + self.dt
         self.tdata.append(t)
-        y = (float(file_splitted[i])/4095)*self.Amplitude
+        y = (float(file_splitted[i])*3/4095)*self.Amplitude
         self.ydata.append(y)
         self.ax.set_ylim(0, 2)
         self.line.set_data(self.tdata, self.ydata)
