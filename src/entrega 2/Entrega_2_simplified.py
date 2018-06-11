@@ -22,40 +22,43 @@ def stream(flag_encabezado = 0):
 	# Lectura del puerto serial
 	DEMOQE_read.flush()
 	data_input_2 = DEMOQE_read.read(5)
-	print("KRecepcion nueva completa")
-	print(data_input_2)
+	#print("KRecepcion nueva completa")
+	#print(data_input_2)
 	# ETAPA 1: Se verifica que la trama tenga al encabezado siempre de primero
 	while True:
 		enc_posi = data_input_2.find(245)
-		print(enc_posi)
+		#print(enc_posi)
 		if enc_posi!=0:
 			data_input_2 = data_input_2[enc_posi:]
-			print(data_input_2)
+			#print(data_input_2)
 			data_input_3 = DEMOQE_read.read(enc_posi)
-			print(data_input_3)
+			#print(data_input_3)
 			data_input = data_input_2 + data_input_3
-			print(data_input)
+			#print(data_input)
 		else:
 			data_input = data_input_2
-			print("Aqui estaba bien")
-			print(data_input)
+			#print("Aqui estaba bien")
+			#print(data_input)
 		for datop in data_input_2:
 			if datop==245:
 				flag_encabezado+=1
 		if flag_encabezado>1:
 			flag_encabezado=0
 			data_input_2 =  b'\x00' + data_input_2[1:]
-			print("Aqui hubo doble encabezado")
-			print(data_input_2)
+			#print("Aqui hubo doble encabezado")
+			#print(data_input_2)
 		else:
+			flag_encabezado = 0
 			break
-	# ETAPA 2: Se guarda cada trama para futuras ocaciones
-	data_list.append(data_input)
-	print("Aqui ya salio del while la trama bien")
-	print(data_input)
-    # ETAPA 3: Decodificación del protocolo
-	analogico_1_aux = (((data_input[1] & 31) << 7) + data_input[2])/2**12
+
+	#print("Aqui ya salio del while la trama bien")
+	#print(data_input)
+    # ETAPA 2: Decodificación del protocolo
+	analogico_1_aux = (((data_input[1] & 31)<<7) + (data_input[2]))
+	print(data_input[1])
+	print(data_input[2])
 	print(analogico_1_aux)
+	#print(analogico_1_aux)
 	signal["analogico_1"].append(analogico_1_aux)
 
 
@@ -78,7 +81,7 @@ class Scope(object):
 		self.len_ana1_aux = 1
 		self.Amplitude = 1
 	# Se encarga de actuaizar los datos del objeto
-	def update(self, i):
+	def update(self,i):
 		lastt = self.tdata[-1]
         #print(datos_analogico_1)
         # longitud de datos almacenados del sensor analogico 1
@@ -101,10 +104,14 @@ class Scope(object):
 		# Señales a graficar
 		t = self.tdata[-1] + self.dt
 		self.tdata.append(t)
-		y = (float(signal["analogico_1"][len(signal["analogico_1"])-1])*3/4095)*self.Amplitude
+		y = (float(signal["analogico_1"][len(signal["analogico_1"])-1]))*1
+		print("vamos a imprimir analogico 1")
+		print(signal["analogico_1"])
+		print("viendo y data")
 		self.ydata.append(y)
-		self.ax.set_ylim(0, 2)
-		self.line.set_data(self.tdata, self.ydata)
+		print(self.ydata)
+		self.ax.set_ylim(0, 3200)
+		self.line.set_data(self.tdata,self.ydata )
 		file.close()
 		file2.close()
 		return self.line,
@@ -132,6 +139,7 @@ while True:
 	scope = Scope(ax)
 	ani = animation.FuncAnimation(fig, scope.update, interval=10,blit=True)
 	stream()
+	#plt.plot(signal["analogico_1"])
 	plt.show(block=False)
 	plt.pause(0.001)
 	DEMOQE_read.close()
