@@ -16,13 +16,15 @@ file = open("Generator_data.txt","w")
 file.write("0")
 file.close()
 
-
+# funcion encargada de realizar la lectura y decodificación de una trama nueva
 def stream(flag_encabezado = 0):
 	#file = open("Generator_data.txt","a")
+	# Lectura del puerto serial
 	DEMOQE_read.flush()
 	data_input_2 = DEMOQE_read.read(5)
 	print("KRecepcion nueva completa")
 	print(data_input_2)
+	# ETAPA 1: Se verifica que la trama tenga al encabezado siempre de primero
 	while True:
 		enc_posi = data_input_2.find(245)
 		print(enc_posi)
@@ -47,10 +49,11 @@ def stream(flag_encabezado = 0):
 			print(data_input_2)
 		else:
 			break
+	# ETAPA 2: Se guarda cada trama para futuras ocaciones
 	data_list.append(data_input)
 	print("Aqui ya salio del while la trama bien")
 	print(data_input)
-    #Decodificacion
+    # ETAPA 3: Decodificación del protocolo
 	analogico_1_aux = (((data_input[1] & 31) << 7) + data_input[2])/2**12
 	print(analogico_1_aux)
 	signal["analogico_1"].append(analogico_1_aux)
@@ -59,7 +62,9 @@ def stream(flag_encabezado = 0):
 def nothing():
 	pass 
 
+# Función para graficar la señal de los sensores
 class Scope(object):
+	# Inicializacion del objeto
 	def __init__(self, ax, maxt=0.5, dt=0.001):
 		self.ax = ax
 		self.dt = dt
@@ -72,21 +77,28 @@ class Scope(object):
 		self.ax.set_xlim(0, self.maxt)
 		self.len_ana1_aux = 1
 		self.Amplitude = 1
+	# Se encarga de actuaizar los datos del objeto
 	def update(self, i):
 		lastt = self.tdata[-1]
         #print(datos_analogico_1)
+        # longitud de datos almacenados del sensor analogico 1
 		self.len_ana1_aux = len(signal["analogico_1"])
+		# Se verifica la base de tiempo a imprimir como osciloscopio
 		file2 = open("time_base_data.txt","r")
 		t2_read = float(file2.read())
+		# Se verifica la amplitud deseada en voltios por DIV
 		file3 = open("amplitud_data.txt","r")
 		self.Amplitude = float(file3.read())
+		# Se actualiza la amplitud maxima en el eje de tiempo
 		self.maxt = t2_read
 		self.ax.set_xlim(self.tdata[0], self.tdata[0] + self.maxt)
+		# Condicion de reseteo de señal una vez finalizado el cadro
 		if lastt > self.tdata[0] + self.maxt:  # reset the arrays
 			self.tdata = [self.tdata[-1]]
 			self.ydata = [self.ydata[-1]]
 			self.ax.set_xlim(self.tdata[0], self.tdata[0] + self.maxt)
 			self.ax.figure.canvas.draw()
+		# Señales a graficar
 		t = self.tdata[-1] + self.dt
 		self.tdata.append(t)
 		y = (float(signal["analogico_1"][len(signal["analogico_1"])-1])*3/4095)*self.Amplitude
