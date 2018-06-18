@@ -33,7 +33,7 @@ class Window(Frame):
         time_base.add_command(label="0.02 seg / DIV",command=self.caso3)
         time_base.add_command(label="0.01 seg / DIV",command=self.caso4)
         time_base.add_command(label="0.005 seg / DIV",command=self.caso1)
-        time_base.add_command(label="0.2 seg / DIV",command=self.caso5)
+        #time_base.add_command(label="0.2 seg / DIV",command=self.caso5)
         menu.add_cascade(label="time base", menu=time_base)
         
         Amplitude = Menu(menu)
