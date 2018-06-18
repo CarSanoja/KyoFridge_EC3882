@@ -4,12 +4,13 @@ DEMOQE_read = serial.Serial('/dev/ttyUSB0',115200)
 flag_encabezado = 0
 while True:
 	DEMOQE_read.flush()
-	data_input_2 = DEMOQE_read.read(5)
+	data_input_2 = DEMOQE_read.read(3)
 	print("INICIAAANDOOOOOOOO")
 	print(data_input_2)
 	print(len(data_input_2))
 	while True:
 		enc_posi = data_input_2.find(245)
+
 		#print(enc_posi)
 		if enc_posi!=0:
 			data_input_2 = data_input_2[enc_posi:]
@@ -24,7 +25,8 @@ while True:
 			print("Sobreescribo data_input, encabezado ok")
 			#print("Aqui estaba bien")
 			#print(data_input)
-		for datop in data_input:
+			
+		for datop in data_input_2:
 			if datop==245:
 				print("encabezado se hace 1")
 				flag_encabezado+=1
@@ -38,6 +40,7 @@ while True:
 		else:
 			flag_encabezado = 0
 			break
+
 	print(data_input)
 	print(len(data_input))
 	analogico_1_aux = (((data_input[1] & 31)<<7) + (data_input[2]))
