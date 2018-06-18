@@ -18,7 +18,7 @@ def stream(flag_encabezado = 0):
 	#file = open("Generator_data.txt","a")
 	# Lectura del puerto serial
 	DEMOQE_read.flush()
-	data_input_2 = DEMOQE_read.read(5)
+	data_input_2 = DEMOQE_read.read(3)
 	#print("KRecepcion nueva completa")
 	#print(data_input_2)
 	# ETAPA 1: Se verifica que la trama tenga al encabezado siempre de primero
@@ -51,19 +51,19 @@ def stream(flag_encabezado = 0):
 	#print("Aqui ya salio del while la trama bien")
 	#print(data_input)
     # ETAPA 2: Decodificación del protocolo
-	analogico_1_aux = (((data_input[1] & 31)<<7) + (data_input[2]))
+	analogico_1_aux = (((data_input[1] & 31)<<7) + (data_input[2]))*3/4096
 	signal["analogico_1"].append(analogico_1_aux)
 
 def makeFig():
 	# Se verifica la base de tiempo a imprimir como osciloscopio
 	file2 = open("time_base_data.txt","r")
 	t2_read = float(file2.read())
-	plt.ylim(0,4200) 
+	plt.ylim(0,3) 
 	plt.title('My Live Streaming Sensor Data')
 	plt.grid(True)                                  			
 	plt.ylabel('Pablonski temp')    
 	plt.xlim(0, t2_read)                       			
-	plt.plot([t*0.0005 for t in range(0,2000, 1)],signal["analogico_1"][len(signal["analogico_1"])-2000:], 'r-', label='Electret')        
+	plt.plot([t*0.0005 for t in range(0,400, 1)],signal["analogico_1"][len(signal["analogico_1"])-400:], 'r-', label='Electret')        
 	plt.legend(loc='upper left')                    				
 
 DEMOQE_read = serial.Serial('/dev/ttyUSB0',115200)
@@ -73,10 +73,10 @@ cnt=0
 while True:
 	stream()
 	cnt=cnt+1
-	if cnt == 2000:
+	if cnt == 400:
 		drawnow(makeFig)                       #Call drawnow to update our live graph
 		plt.pause(.000001)
 		signal["analogico_1"]
 		cnt = 0                     #Pause Briefly. Important to keep drawnow from crashing
-	print(signal["analogico_1"][len(signal["analogico_1"])-1])
+	#print(signal["analogico_1"][len(signal["analogico_1"])-1])
 
