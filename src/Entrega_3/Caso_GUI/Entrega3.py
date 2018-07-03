@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 import matplotlib.animation as animation
 from drawnow import *
-
+import json
 
 # VARIABLES para almacenar los valores de los sensores en el tiempo
 signal = {'analogico_1': [],'analogico_2': [],'digital_1': [],'digital_2': []}
@@ -78,25 +78,11 @@ def stream(flag_encabezado = 0):
 	if read5==True:
 		analogico_2_aux = (((data_input[3] & 31)<<7) + (data_input[4]))*3/4096
 		digital_2_aux = (data_input[1] & 32) >> 5 # entrada digital 2
-		signal["analogico_2"].append(analogico_2_aux)
-		signal["digital_2"].append(digital_2_aux)
+		signal["analogico_2"][0] = (analogico_2_aux)
+		signal["digital_2"][0] = (digital_2_aux)
 	signal["analogico_1"].append(analogico_1_aux)
-	signal["digital_1"].append(digital_1_aux)
-	
-	if read5 == True:
-		print(analogico_2_aux)
-		
-def makeFig():
-	# Se verifica la base de tiempo a imprimir como osciloscopio
-	file2 = open("time_base_data.txt","r")
-	t2_read = float(file2.read())
-	plt.ylim(0,3) 
-	plt.title('My Live Streaming Sensor Data')
-	plt.grid(True)                                  			
-	plt.ylabel('Amplitud')    
-	plt.xlim(0, t2_read)                       			
-	plt.plot([t*0.0005 for t in range(0,400, 1)],signal["analogico_1"][len(signal["analogico_1"])-400:], 'r-', label='Electret')        
-	plt.legend(loc='upper left')                    				
+	signal["digital_1"][0] = (digital_1_aux)
+		                    				
 
 DEMOQE_read = serial.Serial('/dev/ttyUSB0',115200)
 #plt.ion()
@@ -104,8 +90,5 @@ cnt=0
 #seg_div = 1
 while True:
 	stream()
-	#cnt=cnt+1
-	#if cnt == 400:
-		#drawnow(makeFig)                       #Call drawnow to update our live graph
-		#plt.pause(.000001)
-	#	cnt = 0                     #Pause Briefly. Important to keep drawnow from crashing
+	with open('data.txt', 'w') as outfile:  
+		json.dump(signal, outfile)

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>665</width>
-    <height>435</height>
+    <width>675</width>
+    <height>448</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -57,10 +57,10 @@
    <widget class="QTextBrowser" name="electret_enable">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>260</y>
-      <width>61</width>
-      <height>31</height>
+      <x>170</x>
+      <y>300</y>
+      <width>91</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -68,17 +68,35 @@
 background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 235, 235, 206), stop:0.35 rgba(255, 188, 188, 80), stop:0.4 rgba(255, 162, 162, 80), stop:0.425 rgba(255, 132, 132, 156), stop:0.44 rgba(252, 128, 128, 80), stop:1 rgba(255, 255, 255, 0));</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="reset_electret">
+   <widget class="QPushButton" name="on">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>310</y>
+      <x>190</x>
+      <y>240</y>
       <width>51</width>
       <height>27</height>
      </rect>
     </property>
     <property name="text">
-     <string>Reset</string>
+     <string>ON</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeatDelay">
+     <number>10</number>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>100</number>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -94,7 +112,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../../../Escritorio/abstract-vector-background-futuristic-technology-260nw-367356968.jpg</pixmap>
+     <pixmap>../../../../../../../../Escritorio/abstract-vector-background-futuristic-technology-260nw-367356968.jpg</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -120,10 +138,10 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
    <widget class="QTextBrowser" name="door_status">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>210</x>
       <y>60</y>
-      <width>61</width>
-      <height>31</height>
+      <width>81</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -153,10 +171,10 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
    <widget class="QTextBrowser" name="temp_grados">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>130</y>
-      <width>61</width>
-      <height>31</height>
+      <x>210</x>
+      <y>120</y>
+      <width>81</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -169,7 +187,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
       <x>150</x>
       <y>170</y>
       <width>141</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -224,13 +242,13 @@ gridline-color: rgb(255, 0, 0);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../../../Imágenes/termo3.png</pixmap>
+     <pixmap>../../../../../../../../Imágenes/termo3.png</pixmap>
     </property>
    </widget>
    <widget class="PlotWidget" name="electret_plot">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>270</x>
       <y>240</y>
       <width>401</width>
       <height>121</height>
@@ -238,10 +256,11 @@ gridline-color: rgb(255, 0, 0);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(170, 255, 255);
+selection-background-color: qradialgradient(spread:repeat, cx:0.5, cy:0.5, radius:0.077, fx:0.5, fy:0.5, stop:0 rgba(0, 169, 255, 147), stop:0.497326 rgba(0, 0, 0, 147), stop:1 rgba(0, 169, 255, 147));
 background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 235, 235, 206), stop:0.35 rgba(255, 188, 188, 80), stop:0.4 rgba(255, 162, 162, 80), stop:0.425 rgba(255, 132, 132, 156), stop:0.44 rgba(252, 128, 128, 80), stop:1 rgba(255, 255, 255, 0));</string>
     </property>
    </widget>
-   <widget class="QGraphicsView" name="graphicsView">
+   <widget class="PlotWidget" name="imagen">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -255,12 +274,99 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
 background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 235, 235, 206), stop:0.35 rgba(255, 188, 188, 80), stop:0.4 rgba(255, 162, 162, 80), stop:0.425 rgba(255, 132, 132, 156), stop:0.44 rgba(252, 128, 128, 80), stop:1 rgba(255, 255, 255, 0));</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="puerta">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>60</y>
+      <width>51</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>puerta</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>100</number>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Temp_bot">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>130</y>
+      <width>51</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>T°</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>100</number>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="reset_electret">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>270</y>
+      <width>51</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Reset</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeatDelay">
+     <number>10</number>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>100</number>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
    <zorder>label_2</zorder>
    <zorder>label_6</zorder>
    <zorder>label</zorder>
    <zorder>label_3</zorder>
    <zorder>electret_enable</zorder>
-   <zorder>reset_electret</zorder>
+   <zorder>on</zorder>
    <zorder>label_4</zorder>
    <zorder>door_status</zorder>
    <zorder>label_5</zorder>
@@ -268,14 +374,17 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
    <zorder>temp_suggestion</zorder>
    <zorder>temp_bar</zorder>
    <zorder>electret_plot</zorder>
-   <zorder>graphicsView</zorder>
+   <zorder>imagen</zorder>
+   <zorder>puerta</zorder>
+   <zorder>Temp_bot</zorder>
+   <zorder>reset_electret</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>665</width>
+     <width>675</width>
      <height>25</height>
     </rect>
    </property>
