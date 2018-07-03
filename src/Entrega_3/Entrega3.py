@@ -36,8 +36,6 @@ def stream(flag_encabezado = 0):
 		else:
 			print('no encabezado, leyendo otra vez...')
 			pass
-			
-
 	#print("KRecepcion nueva completa")
 	#print(data_input_2)
 	# ETAPA 1: Se verifica que la trama tenga al encabezado siempre de primero
@@ -71,13 +69,9 @@ def stream(flag_encabezado = 0):
 			flag_encabezado=0
 			data_input_2 =  b'\x00' + data_input_2[1:]
 			#print("Aqui hubo doble encabezado")
-			#print(data_input_2)
 		else:
 			flag_encabezado = 0
 			break
-
-	#print("Aqui ya salio del while la trama bien")
-	#print(data_input)
     # ETAPA 2: Decodificación del protocolo
 	analogico_1_aux = (((data_input[1] & 31)<<7) + (data_input[2]))*3/4096
 	digital_1_aux = (data_input[1] & 64) >> 6  # entrada digital 1
@@ -92,7 +86,6 @@ def stream(flag_encabezado = 0):
 	if read5 == True:
 		print(analogico_2_aux)
 		
-
 def makeFig():
 	# Se verifica la base de tiempo a imprimir como osciloscopio
 	file2 = open("time_base_data.txt","r")
@@ -110,7 +103,6 @@ DEMOQE_read = serial.Serial('/dev/ttyUSB0',115200)
 cnt=0
 #seg_div = 1
 while True:
-
 	stream()
 	#cnt=cnt+1
 	#if cnt == 400:
