@@ -13,14 +13,18 @@ def sonido_analisis():
 	with open('data.txt') as json_file:  
 			signal = json.load(json_file)
 
-	electret = signal["analogico_1"][len(signal["analogico_1"])-400:]
+	electret = signal["analogico_1"]
 
 	if condicional == 0:
 		pass
 	else:
 		electret_np = np.asarray(electret)
-		suma_data = electret_np.sum()
+		suma_data = electret_np.max()
 		if suma_data > 800:
+			print(suma_data)
 			return True
 		else:
+			print(suma_data)
 			return False
+
+print(sonido_analisis())
