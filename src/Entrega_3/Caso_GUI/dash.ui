@@ -102,7 +102,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>0</y>
       <width>661</width>
       <height>371</height>
@@ -361,6 +361,19 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="video">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>200</y>
+      <width>101</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
    <zorder>label_2</zorder>
    <zorder>label_6</zorder>
    <zorder>label</zorder>
@@ -378,6 +391,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
    <zorder>puerta</zorder>
    <zorder>Temp_bot</zorder>
    <zorder>reset_electret</zorder>
+   <zorder>video</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

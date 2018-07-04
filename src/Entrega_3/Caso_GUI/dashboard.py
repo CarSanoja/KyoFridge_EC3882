@@ -1,6 +1,8 @@
 import sys
 from PyQt5 import QtCore, QtWidgets, uic
 from pyqtgraph.widgets.MatplotlibWidget import MatplotlibWidget
+from PyQt5.QtGui import QIcon, QPixmap
+import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 import json
@@ -20,6 +22,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 		self.on.clicked.connect(self.plot_electret)
 		self.puerta.clicked.connect(self.data_door)
 		self.Temp_bot.clicked.connect(self.data_image)
+		self.video.setPixmap()
 
 	def data_image(self):
 		image_path = 'c:/home/carlos/Imágenes/img.jpeg' #path to your image file
