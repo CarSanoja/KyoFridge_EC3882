@@ -9,11 +9,11 @@ from matplotlib.lines import Line2D
 import matplotlib.animation as animation
 from drawnow import *
 import sys
-from PyQt5 import QtCore, QtWidgets, uic
-from pyqtgraph.widgets.MatplotlibWidget import MatplotlibWidget
+import json
 
 # VARIABLES para almacenar los valores de los sensores en el tiempo
-signal = {'analogico_1': [],'analogico_2': [],'digital_1': [],'digital_2': []}
+signal = {'analogico_1': [],'analogico_2': [0],'digital_1': [0],'digital_2': [0]}
+signal2 = {'analogico_1': [],'analogico_2': [0],'digital_1': [0],'digital_2': [0]}
 
 #*****************************************************************************
 # Decodificación
@@ -27,7 +27,7 @@ def stream(flag_encabezado = 0):
 
 		if header[0] == 245:
 			read5= True
-			print('Encabezado F5 OK!!')
+			#print('Encabezado F5 OK!!')
 			aux= DEMOQE_read.read(4)
 			data_input_2 = header + aux
 			break
@@ -38,7 +38,7 @@ def stream(flag_encabezado = 0):
 			data_input_2 = header + aux
 			break
 		else:
-			print('no encabezado, leyendo otra vez...')
+			#print('no encabezado, leyendo otra vez...')
 			pass
 	#print("KRecepcion nueva completa")
 	#print(data_input_2)
@@ -78,15 +78,18 @@ def stream(flag_encabezado = 0):
 			break
     # ETAPA 2: Decodificación del protocolo
 	analogico_1_aux = (((data_input[1] & 31)<<7) + (data_input[2]))*3/4096
-	digital_1_aux = (data_input[1] & 64) >> 6  # entrada digital 1
+	digital_1_aux = (data_input[1] & 32) >> 5  # entrada digital 1
+	digital_2_aux = (data_input[1] & 64) >> 6 # entrada digital 2
+	#print(digital_2_aux)
+
 	if read5==True:
-		analogico_2_aux = (((data_input[3] & 31)<<7) + (data_input[4]))*3/4096
-		digital_2_aux = (data_input[1] & 32) >> 5 # entrada digital 2
+		analogico_2_aux = (((data_input[3] & 31)<<7) + (data_input[4]))*(3/4096)*(100/4.59)
 		signal["analogico_2"][0] = (analogico_2_aux)
-		signal["digital_2"][0] = (digital_2_aux)
 	signal["analogico_1"].append(analogico_1_aux)
 	signal["digital_1"][0] = (digital_1_aux)
-		
+	signal["digital_2"][0] = (digital_2_aux)
+
+
 #*****************************************************************************
 # Graficar
 def makeFig():
@@ -105,14 +108,25 @@ def makeFig():
 DEMOQE_read = serial.Serial('/dev/ttyUSB0',115200)
 plt.ion()
 cnt=0
-#seg_div = 1
+cnt2=0
+file = open("testfile.txt","w") 
 while True:
 	stream()
-	with open('data.txt', 'w') as outfile:  
-		json.dump(signal, outfile)
 	cnt=cnt+1
-	if cnt == 400:
+	cnt2=cnt2+1
+	'''if cnt == 400:
 		drawnow(makeFig)                       #Call drawnow to update our live graph
 		plt.pause(.000001)
-		signal["analogico_1"]
-		cnt = 0                     #Pause Briefly. Important to keep drawnow from crashing
+		cnt = 0                     #Pause Briefly. Important to keep drawnow from crashing		'''
+	if cnt2 == 1000:
+		signal2["analogico_1"] = signal["analogico_1"][len(signal["analogico_1"])-1000:]
+		signal2["analogico_2"] = signal["analogico_2"][0]
+		signal2["digital_1"] = signal["digital_1"][0]
+		signal2["digital_2"] = signal["digital_2"][0]
+		file.write("1")
+		s = time.time()
+		with open('data.json', 'w') as outfile:
+			json.dump(signal2, outfile)		
+		print(time.time() - s )
+		file.write("0")
+		cnt2=0	
