@@ -14,9 +14,9 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 		QtWidgets.QMainWindow.__init__(self)
 		Ui_MainWindow.__init__(self)
 		self.setupUi(self)
-		self.on.clicked.connect(self.status_electret)
-		self.puerta.clicked.connect(self.data_door)
-		self.Temp_bot.clicked.connect(self.data_temp)
+		self.actualizar.clicked.connect(self.data_temp)
+		self.actualizar.clicked.connect(self.data_door)
+		self.actualizar.clicked.connect(self.status_electret)
 
 	def data_temp(self):
 		with open('data.txt') as json_file:  
@@ -30,15 +30,11 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 		with open('data.txt') as json_file:  
 			signal = json.load(json_file)
 		if signal["digital_1"][0] == 1:
-			print("puerta abierta")
 			self.door_status.setText(str("Puerta Abierta"))	
 		else:
-			print("puerta cerrada")
 			self.door_status.setText(str("Puerta Cerrada"))
 
 	def status_electret(self):
-		file2 = open("time_base_data.txt","r")
-		t2_read = float(file2.read())
 		with open('data.txt') as json_file:  
 			signal = json.load(json_file)
 		if signal["digital_2"][0] == 1:
