@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>551</width>
-    <height>448</height>
+    <width>490</width>
+    <height>408</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>20</x>
       <y>0</y>
       <width>451</width>
       <height>41</height>
@@ -37,9 +37,9 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>290</y>
-      <width>161</width>
+      <x>60</x>
+      <y>260</y>
+      <width>141</width>
       <height>17</height>
      </rect>
     </property>
@@ -57,8 +57,8 @@
    <widget class="QTextBrowser" name="electret_enable">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>300</y>
+      <x>220</x>
+      <y>240</y>
       <width>141</width>
       <height>61</height>
      </rect>
@@ -68,42 +68,11 @@
 background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 235, 235, 206), stop:0.35 rgba(255, 188, 188, 80), stop:0.4 rgba(255, 162, 162, 80), stop:0.425 rgba(255, 132, 132, 156), stop:0.44 rgba(252, 128, 128, 80), stop:1 rgba(255, 255, 255, 0));</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="on">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>260</y>
-      <width>51</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>ON</string>
-    </property>
-    <property name="checkable">
-     <bool>true</bool>
-    </property>
-    <property name="autoRepeat">
-     <bool>true</bool>
-    </property>
-    <property name="autoRepeatDelay">
-     <number>10</number>
-    </property>
-    <property name="autoRepeatInterval">
-     <number>100</number>
-    </property>
-    <property name="autoDefault">
-     <bool>false</bool>
-    </property>
-    <property name="flat">
-     <bool>false</bool>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
+      <x>-30</x>
+      <y>40</y>
       <width>581</width>
       <height>371</height>
      </rect>
@@ -112,14 +81,14 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../../../../../../Escritorio/abstract-vector-background-futuristic-technology-260nw-367356968.jpg</pixmap>
+     <pixmap>../../../../../../../../../../../../Escritorio/abstract-vector-background-futuristic-technology-260nw-367356968.jpg</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>70</y>
+      <x>60</x>
+      <y>80</y>
       <width>121</width>
       <height>17</height>
      </rect>
@@ -138,7 +107,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
    <widget class="QTextBrowser" name="door_status">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>250</x>
       <y>60</y>
       <width>81</width>
       <height>41</height>
@@ -151,7 +120,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>60</x>
       <y>150</y>
       <width>121</width>
       <height>17</height>
@@ -171,7 +140,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
    <widget class="QTextBrowser" name="temp_grados">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>250</x>
       <y>120</y>
       <width>81</width>
       <height>41</height>
@@ -184,7 +153,7 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
    <widget class="QTextBrowser" name="temp_suggestion">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>220</x>
       <y>170</y>
       <width>141</width>
       <height>41</height>
@@ -201,9 +170,9 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
     <property name="geometry">
      <rect>
       <x>390</x>
-      <y>160</y>
+      <y>120</y>
       <width>31</width>
-      <height>101</height>
+      <height>81</height>
      </rect>
     </property>
     <property name="layoutDirection">
@@ -242,94 +211,7 @@ gridline-color: rgb(255, 0, 0);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../../../../../../Imágenes/termo3.png</pixmap>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="puerta">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>70</y>
-      <width>51</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>puerta</string>
-    </property>
-    <property name="checkable">
-     <bool>true</bool>
-    </property>
-    <property name="autoRepeat">
-     <bool>true</bool>
-    </property>
-    <property name="autoRepeatInterval">
-     <number>100</number>
-    </property>
-    <property name="autoDefault">
-     <bool>false</bool>
-    </property>
-    <property name="flat">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Temp_bot">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>130</y>
-      <width>51</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>T°</string>
-    </property>
-    <property name="checkable">
-     <bool>true</bool>
-    </property>
-    <property name="autoRepeat">
-     <bool>true</bool>
-    </property>
-    <property name="autoRepeatInterval">
-     <number>100</number>
-    </property>
-    <property name="autoDefault">
-     <bool>false</bool>
-    </property>
-    <property name="flat">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="reset_electret">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>260</y>
-      <width>51</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Reset</string>
-    </property>
-    <property name="checkable">
-     <bool>true</bool>
-    </property>
-    <property name="autoRepeat">
-     <bool>true</bool>
-    </property>
-    <property name="autoRepeatDelay">
-     <number>10</number>
-    </property>
-    <property name="autoRepeatInterval">
-     <number>100</number>
-    </property>
-    <property name="autoDefault">
-     <bool>false</bool>
-    </property>
-    <property name="flat">
-     <bool>false</bool>
+     <pixmap>../../../../../../../../../../../../Imágenes/termo3.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_7">
@@ -345,7 +227,7 @@ gridline-color: rgb(255, 0, 0);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>termo3.png</pixmap>
+     <pixmap>../../../../../../.designer/backup/termo3.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_8">
@@ -361,9 +243,39 @@ gridline-color: rgb(255, 0, 0);</string>
      <string/>
     </property>
     <property name="pixmap">
+     <pixmap>../../../../../../.designer/backup/abstract-vector-background-futuristic-technology-260nw-367356968.jpg</pixmap>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="actualizar">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>310</y>
+      <width>99</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Actualizar</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>491</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
      <pixmap>abstract-vector-background-futuristic-technology-260nw-367356968.jpg</pixmap>
     </property>
    </widget>
+   <zorder>label_9</zorder>
    <zorder>label_8</zorder>
    <zorder>label_2</zorder>
    <zorder>label_7</zorder>
@@ -371,23 +283,20 @@ gridline-color: rgb(255, 0, 0);</string>
    <zorder>label</zorder>
    <zorder>label_3</zorder>
    <zorder>electret_enable</zorder>
-   <zorder>on</zorder>
    <zorder>label_4</zorder>
    <zorder>door_status</zorder>
    <zorder>label_5</zorder>
    <zorder>temp_grados</zorder>
    <zorder>temp_suggestion</zorder>
    <zorder>temp_bar</zorder>
-   <zorder>puerta</zorder>
-   <zorder>Temp_bot</zorder>
-   <zorder>reset_electret</zorder>
+   <zorder>actualizar</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>551</width>
+     <width>490</width>
      <height>25</height>
     </rect>
    </property>
