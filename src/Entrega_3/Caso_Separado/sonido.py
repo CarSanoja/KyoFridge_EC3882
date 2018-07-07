@@ -20,13 +20,11 @@ def sonido_analisis():
 	else:
 		electret_np = np.asarray(electret)
 		hist, bin_edges = np.histogram(electret_np)
-		print(hist)
-		print(hist.max())
 		maxi = hist.max()
 		maxi_histo = np.asscalar(maxi)
-		if maxi_histo > 800: 
+		if maxi_histo > 850: 
 			return True
 		else:
 			return False
 
-print(sonido_analisis())
+#print(sonido_analisis())
