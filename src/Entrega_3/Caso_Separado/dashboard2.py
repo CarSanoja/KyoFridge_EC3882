@@ -1,7 +1,6 @@
 import sys
-from PyQt5 import QtCore, QtWidgets, uic, QtGui
+from PyQt5 import  QtWidgets, uic, QtGui, QtCore
 from PyQt5.QtCore import QTimer
-from pyqtgraph.widgets.MatplotlibWidget import MatplotlibWidget
 import numpy as np
 import matplotlib.pyplot as plt
 import json
@@ -26,7 +25,8 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 	def leer(self):
 		while True:
 			file = open("testfile.txt","r")
-			if file.read()=="0":
+			x = file.read()
+			if int(x)==0:
 				break
 			else:
 				pass 

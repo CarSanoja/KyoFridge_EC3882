@@ -10,7 +10,7 @@ def sonido_analisis():
 	with open('data_im.txt') as json_file:  
 			condicional = json.load(json_file)
 
-	with open('data.txt') as json_file:  
+	with open('data.json') as json_file:  
 			signal = json.load(json_file)
 
 	electret = signal["analogico_1"]
@@ -19,12 +19,14 @@ def sonido_analisis():
 		pass
 	else:
 		electret_np = np.asarray(electret)
-		suma_data = electret_np.max()
-		if suma_data > 800:
-			print(suma_data)
+		hist, bin_edges = np.histogram(electret_np)
+		print(hist)
+		print(hist.max())
+		maxi = hist.max()
+		maxi_histo = np.asscalar(maxi)
+		if maxi_histo > 800: 
 			return True
 		else:
-			print(suma_data)
 			return False
 
 print(sonido_analisis())

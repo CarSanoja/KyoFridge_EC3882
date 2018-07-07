@@ -1,6 +1,7 @@
 import numpy as np
 from sonido import *
 import cv2
+from CLAHE import CLAHE
 
 # Lo primero es verificar si la señal de análisis fue activado
 SetAnalisis = sonido_analisis()
@@ -11,6 +12,7 @@ cap = cv2.VideoCapture(1)
 while(True):
     "FRAME BY FRAME"
     ret, frame = cap.read()
+    #frame=CLAHE(frame)
     # Para editar se trabaja sobre los frames
      
     "RESULTADOS"
