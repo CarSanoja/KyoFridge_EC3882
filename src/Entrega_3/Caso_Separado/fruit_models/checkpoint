@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/carlos/Descargas/GITHUB/Fruit-Images-Dataset-master/src/image_classification/network/../fruit_models/model.ckpt"
+all_model_checkpoint_paths: "/home/carlos/Descargas/GITHUB/Fruit-Images-Dataset-master/src/image_classification/network/../fruit_models/model.ckpt"
