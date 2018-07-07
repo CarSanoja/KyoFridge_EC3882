@@ -40,6 +40,7 @@ def predict(sess, X, softmax, keep_prob, images):
     # probability that any of the classes are true.
     probability = sess.run(softmax, feed_dict={X: images, keep_prob: 1.0})
     # get the highest probability from the array and that should be the result
+    print(probability)
     prediction = sess.run(tf.argmax(probability, 1))
     return prediction
 
@@ -64,10 +65,10 @@ def main():
     with open(root_dir + '/labels') as f:
         labels = f.readlines()
     labels = [x.strip() for x in labels]
-    labels = ["nothing"] + labels
+    labels =  labels
 
     # flag parsing
-    tf.app.flags.DEFINE_string('image_path', root_dir + '/pru.jpg', 'Path to image')
+    tf.app.flags.DEFINE_string('image_path', root_dir + '/object.png', 'Path to image')
     FLAGS = tf.app.flags.FLAGS
     with tf.Session() as sess:
         image_path = FLAGS.image_path
@@ -98,6 +99,6 @@ def main():
         coord.request_stop()
         coord.join(threads)
         sess.close()
-    return print(label_out)
+    return label_out
 
-main()
+#main()
