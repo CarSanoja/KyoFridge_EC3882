@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import json
 import time
+from image import *
 
 qtCreatorFile = "dash.ui" # Enter file here.
 timer = QTimer()
@@ -24,12 +25,15 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
 	def leer(self):
 		while True:
-			file = open("testfile.txt","r")
-			x = file.read()
-			if int(x)==0:
-				break
-			else:
-				pass 
+			try:
+				file = open("testfile.txt","r")
+				x = file.read()
+				if int(x)==0:
+					break
+				else:
+					pass 
+			except:
+				self.leer()
 		#time.sleep(0.005)
 		#s=time.time()
 		with open('data.json') as json_file:
@@ -74,6 +78,8 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 			with open('data_im.txt', 'w') as outfile:  
 				json.dump(data_image, outfile)
 			self.electret_enable.setText(str("Esperando comando de voz"))
+			label = image_capture()
+			print(label)
 		else:
 			self.electret_enable.setText(str(" No Escuchando "))
 			data_image = 0
