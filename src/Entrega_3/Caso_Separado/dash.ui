@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>490</width>
-    <height>378</height>
+    <width>485</width>
+    <height>463</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -73,8 +73,8 @@ background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5
      <rect>
       <x>-30</x>
       <y>40</y>
-      <width>581</width>
-      <height>371</height>
+      <width>451</width>
+      <height>281</height>
      </rect>
     </property>
     <property name="text">
@@ -235,8 +235,8 @@ gridline-color: rgb(255, 0, 0);</string>
      <rect>
       <x>0</x>
       <y>-10</y>
-      <width>561</width>
-      <height>401</height>
+      <width>451</width>
+      <height>351</height>
      </rect>
     </property>
     <property name="text">
@@ -251,8 +251,8 @@ gridline-color: rgb(255, 0, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>491</width>
-      <height>351</height>
+      <width>621</width>
+      <height>451</height>
      </rect>
     </property>
     <property name="text">
@@ -260,6 +260,40 @@ gridline-color: rgb(255, 0, 0);</string>
     </property>
     <property name="pixmap">
      <pixmap>abstract-vector-background-futuristic-technology-260nw-367356968.jpg</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>330</y>
+      <width>171</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Que hay en la nevera</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="nevera_result">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>330</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(170, 255, 255);
+background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 235, 235, 206), stop:0.35 rgba(255, 188, 188, 80), stop:0.4 rgba(255, 162, 162, 80), stop:0.425 rgba(255, 132, 132, 156), stop:0.44 rgba(252, 128, 128, 80), stop:1 rgba(255, 255, 255, 0));</string>
     </property>
    </widget>
    <zorder>label_9</zorder>
@@ -276,13 +310,15 @@ gridline-color: rgb(255, 0, 0);</string>
    <zorder>temp_grados</zorder>
    <zorder>temp_suggestion</zorder>
    <zorder>temp_bar</zorder>
+   <zorder>label_10</zorder>
+   <zorder>nevera_result</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>490</width>
+     <width>485</width>
      <height>25</height>
     </rect>
    </property>
