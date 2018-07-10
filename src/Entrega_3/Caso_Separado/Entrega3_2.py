@@ -104,12 +104,14 @@ def makeFig():
 	plt.plot([t*0.0005 for t in range(0,400, 1)],signal["analogico_1"][len(signal["analogico_1"])-400:], 'r-', label='Electret')        
 	plt.legend(loc='upper left')                    				
 
+def bandera_lectura_bug(activacion):
+	file = open("testfile.txt","w") 
+	file.write(str(activacion))
 
 DEMOQE_read = serial.Serial('/dev/ttyUSB0',115200)
 plt.ion()
 cnt=0
 cnt2=0
-file = open("testfile.txt","w") 
 while True:
 	stream()
 	cnt=cnt+1
@@ -123,10 +125,10 @@ while True:
 		signal2["analogico_2"] = signal["analogico_2"][0]
 		signal2["digital_1"] = signal["digital_1"][0]
 		signal2["digital_2"] = signal["digital_2"][0]
-		file.write("1")
-		s = time.time()
+		bandera_lectura_bug(1)
+		#s = time.time()
 		with open('data.json', 'w') as outfile:
 			json.dump(signal2, outfile)		
-		print(time.time() - s )
-		file.write("0")
+		#print(time.time() - s )
+		bandera_lectura_bug(0)
 		cnt2=0	
