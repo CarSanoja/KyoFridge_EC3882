@@ -16,11 +16,13 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 		QtWidgets.QMainWindow.__init__(self)
 		Ui_MainWindow.__init__(self)
 		self.setupUi(self)
-		self.senal = None
+		self.signal = None
+		self.data_image = 0
 		timer.timeout.connect(self.leer)
 		timer.timeout.connect(self.data_temp)
 		timer.timeout.connect(self.data_door)
 		timer.timeout.connect(self.status_electret)
+		timer.timeout.connect(self.take_image)
 		timer.start(100)
 
 	def leer(self):
@@ -33,13 +35,12 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 				else:
 					pass 
 			except:
-				self.leer()
+				break
 		#time.sleep(0.005)
 		#s=time.time()
 		with open('data.json') as json_file:
 			self.signal = json.load(json_file)
 		#print(time.time() - s )
-
 
 	def data_temp(self):
 		self.temp_grados.setText(str(str(self.signal["analogico_2"])+"°"))
@@ -65,27 +66,34 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 			palette.setColor(QtGui.QPalette.Highlight,QtGui.QColor(QtCore.Qt.red))
 			self.temp_bar.setPalette(palette)
 
-
 	def data_door(self):
 		if self.signal["digital_1"] == 1:
 			self.door_status.setText(str("Puerta Abierta"))	
 		else:
 			self.door_status.setText(str("Puerta Cerrada"))
 
+	def take_image(self):
+		if self.data_image == 1:
+			label = image_capture(self.signal,self.data_image)
+			#print(label)
+			#print("escribir label")
+			if label != None:
+				self.nevera_result.setText(str(label))
+			else:
+				pass
+		else:
+			pass
+
 	def status_electret(self):
 		if self.signal["digital_2"] == 1:
-			data_image = 1
-			with open('data_im.txt', 'w') as outfile:  
-				json.dump(data_image, outfile)
 			self.electret_enable.setText(str("Esperando comando de voz"))
-			label = image_capture()
-			print(label)
+			#print("FUUUCCCKKKKK")
+			self.data_image = 1
+			#print("ya me voy")
 		else:
 			self.electret_enable.setText(str(" No Escuchando "))
-			data_image = 0
-			with open('data_im.txt', 'w') as outfile:  
-				json.dump(data_image, outfile)
-       			
+			self.data_image = 0
+
 while True:
 	app = QtWidgets.QApplication(sys.argv)
 	window = MyApp()
