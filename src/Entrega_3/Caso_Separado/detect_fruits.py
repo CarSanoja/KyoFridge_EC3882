@@ -71,6 +71,7 @@ def main():
     tf.app.flags.DEFINE_string('image_path', root_dir + '/object.png', 'Path to image')
     FLAGS = tf.app.flags.FLAGS
     with tf.Session() as sess:
+        print("ENRANDO SESION")
         image_path = FLAGS.image_path
         # To use, enqueue filenames in a Queue. The output of Read will be a filename (key) and the contents of that file (value).
         image_reader = tf.WholeFileReader()
@@ -95,7 +96,7 @@ def main():
         coord = tf.train.Coordinator()
         threads = tf.train.start_queue_runners(sess=sess, coord=coord)
         label_out = process_image(sess, X, softmax, keep_prob, image, height, width, depth, labels)
-
+        print("FINAL DE DETECCION")
         coord.request_stop()
         coord.join(threads)
         sess.close()
