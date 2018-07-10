@@ -5,34 +5,31 @@ from CLAHE import CLAHE
 from detect_fruits import main
 
 
+def image_capture(signal,condicional):
 
-#Ahora se procede a realizar el sistema de adquisición de imagen
-cap = cv2.VideoCapture(0)
-
-while(True):
-	# Lo primero es verificar si la señal de análisis fue activado
-	SetAnalisis = sonido_analisis()
+	#Ahora se procede a realizar el sistema de adquisición de imagen
+	cap = cv2.VideoCapture(1)
+		# Lo primero es verificar si la señal de análisis fue activado
+	SetAnalisis = sonido_analisis(signal,condicional)
 	print(SetAnalisis)
-
-	#"FRAME BY FRAME"
-	ret, frame = cap.read()
-	if SetAnalisis==True:
-		print("ENTREE")
+	if SetAnalisis==False:
+		ret, frame = cap.read()
+		#print("ENTREE")
 		cv2.imshow('frame',frame)
 		cv2.imwrite('object.png',frame)
-		label_out = main()
-		print(label_out)
-		break
+		#print("Entrando a detect fruit")
+		try:
+			label_out = main()
+		except:
+			cap.release()
+			cv2.destroyAllWindows()
+			return None
+		#print(label_out)
+		# When everything done, release the capture
+		cap.release()
+		cv2.destroyAllWindows()
+		return(label_out)
 	else:
-		pass
+		return None
 
-	
 
-	# Presionar q para salir
-	if cv2.waitKey(1) & 0xFF == ord('q'):
-		cv2.imwrite('object.png',frame)
-		break
-
-# When everything done, release the capture
-cap.release()
-cv2.destroyAllWindows()
