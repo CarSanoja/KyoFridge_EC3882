@@ -1,0 +1,51 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_Compiler_SearchUserPaths</name>
+      <values lines_count="2">
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="Generated_Code/Bit1.c" FileDate="2018-07-02, 17:04:28" FileAge="1530565468433" FileType="45637" CompNumb="64" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2018-07-11, 14:20:22" FileAge="1531333222639" FileType="45637" CompNumb="4" />
+      <File Name="Generated_Code/IO_Map.h" FileDate="2018-05-30, 14:24:12" FileAge="1527704652492" FileType="45637" />
+      <File Name="Generated_Code/Led_Dig_2.h" FileDate="2018-07-04, 14:43:48" FileAge="1530729828007" FileType="45637" CompNumb="61" />
+      <File Name="Generated_Code/IO_Map.c" FileDate="2018-05-30, 14:24:12" FileAge="1527704652474" FileType="45637" />
+      <File Name="Generated_Code/Led_Dig_2.c" FileDate="2018-07-04, 14:43:48" FileAge="1530729828044" FileType="45637" CompNumb="61" />
+      <File Name="Project_Settings/Linker_Files/ProcessorExpert.prm" FileDate="2018-05-30, 14:24:12" FileAge="1527704652354" FileType="8" CompNumb="4" />
+      <File Name="Generated_Code/Led_Dig_1.h" FileDate="2018-07-02, 16:27:49" FileAge="1530563269070" FileType="45637" CompNumb="57" />
+      <File Name="Generated_Code/Led_Dig_1.c" FileDate="2018-07-02, 16:27:49" FileAge="1530563269113" FileType="45637" CompNumb="57" />
+      <File Name="Generated_Code/TI1.h" FileDate="2018-06-18, 13:48:31" FileAge="1529344111033" FileType="45637" CompNumb="24" />
+      <File Name="Generated_Code/TI1.c" FileDate="2018-06-18, 13:48:31" FileAge="1529344111051" FileType="45637" CompNumb="24" />
+      <File Name="Sources/Events.h" FileDate="2018-07-11, 14:01:51" FileAge="1531332111964" FileType="131328" />
+      <File Name="Sources/Events.c" FileDate="2018-07-02, 17:14:42" FileAge="1530566082463" FileType="131328" />
+      <File Name="Generated_Code/Digital2.h" FileDate="2018-07-04, 14:46:00" FileAge="1530729960768" FileType="45637" CompNumb="37" />
+      <File Name="Generated_Code/AD1.h" FileDate="2018-07-11, 14:20:22" FileAge="1531333222619" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/Digital2.c" FileDate="2018-07-04, 14:46:00" FileAge="1530729960742" FileType="45637" CompNumb="37" />
+      <File Name="Generated_Code/AD1.c" FileDate="2018-07-11, 14:20:22" FileAge="1531333222631" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/LedTrama5.h" FileDate="2018-07-02, 16:27:37" FileAge="1530563257639" FileType="45637" CompNumb="62" />
+      <File Name="Documentation/Primera_Entrega_Settings.xml" FileDate="2018-07-11, 14:20:22" FileAge="1531333222728" FileType="3072" />
+      <File Name="Sources/main.c" FileDate="2018-07-11, 14:14:48" FileAge="1531332888290" FileType="128" />
+      <File Name="Generated_Code/LedTrama5.c" FileDate="2018-07-02, 16:27:37" FileAge="1530563257635" FileType="45637" CompNumb="62" />
+      <File Name="Documentation/Primera_Entrega.txt" FileDate="2018-07-11, 14:01:53" FileAge="1531332113020" FileType="3072" />
+      <File Name="Generated_Code/Vectors.c" FileDate="2018-07-11, 14:01:51" FileAge="1531332111898" FileType="45637" CompNumb="4" />
+      <File Name="Generated_Code/AS1.h" FileDate="2018-05-30, 14:24:12" FileAge="1527704652700" FileType="45637" CompNumb="8" />
+      <File Name="Documentation/Primera_Entrega_SIGNALS.txt" FileDate="2018-07-11, 14:20:37" FileAge="1531333237121" FileType="3072" />
+      <File Name="Generated_Code/AS1.c" FileDate="2018-05-30, 14:24:12" FileAge="1527704652696" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/PE_Const.h" FileDate="2018-05-30, 14:24:12" FileAge="1527704652507" FileType="45637" />
+      <File Name="Generated_Code/Muestreo.h" FileDate="2018-05-30, 14:24:12" FileAge="1527704652584" FileType="45637" CompNumb="47" />
+      <File Name="Generated_Code/PE_Types.h" FileDate="2018-05-30, 14:24:12" FileAge="1527704652533" FileType="45637" />
+      <File Name="Generated_Code/PE_Error.h" FileDate="2018-05-30, 14:24:12" FileAge="1527704652530" FileType="45637" />
+      <File Name="Generated_Code/Muestreo.c" FileDate="2018-05-30, 14:24:12" FileAge="1527704652580" FileType="45637" CompNumb="47" />
+      <File Name="Generated_Code/KB1.h" FileDate="2018-07-02, 17:14:42" FileAge="1530566082173" FileType="45637" CompNumb="65" />
+      <File Name="Generated_Code/KB1.c" FileDate="2018-07-02, 17:14:42" FileAge="1530566082170" FileType="45637" CompNumb="65" />
+      <File Name="Generated_Code/Cpu.h" FileDate="2018-07-02, 17:04:28" FileAge="1530565468475" FileType="45637" CompNumb="4" />
+      <File Name="Generated_Code/Bit1.h" FileDate="2018-07-02, 17:04:28" FileAge="1530565468436" FileType="45637" CompNumb="64" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>36</CodeGenReference>
+</CodeGenerationInfo>

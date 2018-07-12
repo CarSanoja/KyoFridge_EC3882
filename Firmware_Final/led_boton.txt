@@ -1,0 +1,104 @@
+/* ###################################################################
+**     Filename    : main.c
+**     Project     : prueba_botones
+**     Processor   : MC9S08QE128CLK
+**     Version     : Driver 01.12
+**     Compiler    : CodeWarrior HCS08 C Compiler
+**     Date/Time   : 2018-05-12, 21:49, # CodeGen: 0
+**     Abstract    :
+**         Main module.
+**         This module contains user's application code.
+**     Settings    :
+**     Contents    :
+**         No public methods
+**
+** ###################################################################*/
+/*!
+** @file main.c
+** @version 01.12
+** @brief
+**         Main module.
+**         This module contains user's application code.
+*/         
+/*!
+**  @addtogroup main_module main module documentation
+**  @{
+*/         
+/* MODULE main */
+
+
+/* Including needed modules to compile this module/procedure */
+#include "Cpu.h"
+#include "Events.h"
+/* Include shared modules, which are used for whole project */
+#include "PE_Types.h"
+#include "PE_Error.h"
+#include "PE_Const.h"
+#include "IO_Map.h"
+
+
+
+/* User includes (#include below this line is not maintained by Processor Expert) */
+
+void main(void)
+{
+  /* Write your local variable definition here */
+	/* Define LED's ON or OFF,*/
+	#define ON 1
+	#define OFF 0
+	/* Define LED's*/
+	#define LED1 PTCD_PTCD0
+	/*Define Switch 1*/
+	#define SW1 PTAD_PTAD2
+	PTADD = 0xFB;  /*PortA bit 2 input all others outputs */
+	PTCDD = 0xFF;  /*all port C outputs */
+	PTCD = 0xFF;   /* turn off all LEDs */
+	PTAPE = 0x04;  /*enable pullup on PTA bit 2 */
+	//RTCSC = 0x91;  /* Enable RTC interrupt, prescaler to 8, CLK = 1kHz LPO */
+	//RTCMOD = 0xFC; /* Set RTC Modulo to 252 = 2 second interrupt */   /* turn off all LEDs */
+  /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
+  PE_low_level_init();
+  /*** End of Processor Expert internal initialization.                    ***/
+
+  /* Write your code here */
+  /* For example: for(;;) { } */
+  while (1) { /* this line gives an error about always true, just ignore error */
+    if (SW1) {
+      LED1=ON;
+     // asm STOP; /* you can uncomment this line to see STOP3 work */
+    } else {
+      LED1=OFF;
+     // asm STOP; /* you can uncomment this line to see STOP3 work */
+    }
+  }
+  /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
+  /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
+  #ifdef PEX_RTOS_START
+    PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
+  #endif
+  /*** End of RTOS startup code.  ***/
+  /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
+  for(;;){}
+  /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
+} /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
+
+/* END main */
+/*!
+** @}
+*/
+/*
+** ###################################################################
+**
+**     This file was created by Processor Expert 10.3 [05.09]
+**     for the Freescale HCS08 series of microcontrollers.
+**
+** ###################################################################
+*/
+
+
+
+
+			do{
+				error = AS1_SendBlock(&iADC.u8, 2, &Enviados); //Se envía el bloque de datos por puetro serial
+			}while(error!=ERR_OK);
+			estado = WAIT;	// una vez enviado, se espera a la próxima interrupción
