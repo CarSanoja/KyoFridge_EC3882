@@ -1,0 +1,43 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_Compiler_SearchUserPaths</name>
+      <values lines_count="2">
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="Generated_Code/Vectors.c" FileDate="2018-05-21, 15:01:48" FileAge="1526929308217" FileType="45637" CompNumb="4" />
+      <File Name="Generated_Code/PE_Error.h" FileDate="2018-05-13, 14:46:06" FileAge="1526237166000" FileType="45637" />
+      <File Name="Generated_Code/AD1.c" FileDate="2018-05-21, 14:31:41" FileAge="1526927501080" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/AS1.h" FileDate="2018-05-19, 13:30:36" FileAge="1526751036000" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/Muestreo.h" FileDate="2018-05-21, 15:01:48" FileAge="1526929308032" FileType="45637" CompNumb="47" />
+      <File Name="Documentation/Test3.txt" FileDate="2018-05-21, 15:01:48" FileAge="1526929308414" FileType="3072" />
+      <File Name="Generated_Code/Digital2.h" FileDate="2018-05-19, 13:20:54" FileAge="1526750454000" FileType="45637" CompNumb="37" />
+      <File Name="Generated_Code/AS1.c" FileDate="2018-05-19, 13:30:36" FileAge="1526751036000" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/Muestreo.c" FileDate="2018-05-21, 15:01:48" FileAge="1526929308015" FileType="45637" CompNumb="47" />
+      <File Name="Generated_Code/Digital2.c" FileDate="2018-05-19, 13:20:54" FileAge="1526750454000" FileType="45637" CompNumb="37" />
+      <File Name="Documentation/Test3_Settings.xml" FileDate="2018-05-21, 15:37:20" FileAge="1526931440207" FileType="3072" />
+      <File Name="Project_Settings/Linker_Files/ProcessorExpert.prm" FileDate="2018-05-13, 14:46:06" FileAge="1526237166000" FileType="8" CompNumb="4" />
+      <File Name="Generated_Code/TI1.h" FileDate="2018-05-21, 15:37:20" FileAge="1526931440150" FileType="45637" CompNumb="24" />
+      <File Name="Sources/main.c" FileDate="2018-05-21, 15:01:48" FileAge="1526929308075" FileType="128" />
+      <File Name="Generated_Code/PE_Const.h" FileDate="2018-05-13, 14:46:06" FileAge="1526237166000" FileType="45637" />
+      <File Name="Generated_Code/TI1.c" FileDate="2018-05-21, 15:37:20" FileAge="1526931440162" FileType="45637" CompNumb="24" />
+      <File Name="Generated_Code/Cpu.h" FileDate="2018-05-13, 14:46:06" FileAge="1526237166000" FileType="45637" CompNumb="4" />
+      <File Name="Generated_Code/IO_Map.h" FileDate="2018-05-13, 14:46:06" FileAge="1526237166000" FileType="45637" />
+      <File Name="Sources/Events.h" FileDate="2018-05-21, 15:01:48" FileAge="1526929308248" FileType="131328" />
+      <File Name="Generated_Code/Digital1.h" FileDate="2018-05-19, 13:20:54" FileAge="1526750454000" FileType="45637" CompNumb="36" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2018-05-21, 15:01:48" FileAge="1526929308133" FileType="45637" CompNumb="4" />
+      <File Name="Generated_Code/IO_Map.c" FileDate="2018-05-13, 14:46:06" FileAge="1526237166000" FileType="45637" />
+      <File Name="Documentation/Test3_SIGNALS.txt" FileDate="2018-05-21, 15:37:20" FileAge="1526931440179" FileType="3072" />
+      <File Name="Sources/Events.c" FileDate="2018-05-14, 15:43:00" FileAge="1526326980000" FileType="131328" />
+      <File Name="Generated_Code/Digital1.c" FileDate="2018-05-19, 13:20:54" FileAge="1526750454000" FileType="45637" CompNumb="36" />
+      <File Name="Generated_Code/PE_Types.h" FileDate="2018-05-13, 14:46:06" FileAge="1526237166000" FileType="45637" />
+      <File Name="Generated_Code/AD1.h" FileDate="2018-05-21, 14:31:41" FileAge="1526927501111" FileType="45637" CompNumb="9" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>33</CodeGenReference>
+</CodeGenerationInfo>

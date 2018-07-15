@@ -1,0 +1,41 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_Compiler_SearchUserPaths</name>
+      <values lines_count="2">
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="Generated_Code/Vectors.c" FileDate="2018-05-05, 18:15:56" FileAge="1525558556057" FileType="45637" CompNumb="4" />
+      <File Name="Generated_Code/AS1.h" FileDate="2018-05-05, 18:15:55" FileAge="1525558555585" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/AS1.c" FileDate="2018-05-05, 18:15:55" FileAge="1525558555581" FileType="45637" CompNumb="8" />
+      <File Name="Project_Settings/Linker_Files/ProcessorExpert.prm" FileDate="2018-05-05, 18:11:45" FileAge="1525558305989" FileType="8" CompNumb="4" />
+      <File Name="Documentation/led.txt" FileDate="2018-05-05, 18:15:57" FileAge="1525558557565" FileType="3072" />
+      <File Name="Sources/main.c" FileDate="2018-05-05, 18:15:55" FileAge="1525558555813" FileType="128" />
+      <File Name="Generated_Code/MCUC1.h" FileDate="2018-05-05, 18:15:55" FileAge="1525558555570" FileType="45637" CompNumb="15" />
+      <File Name="Sources/Events.h" FileDate="2018-05-05, 18:15:56" FileAge="1525558556318" FileType="131328" />
+      <File Name="Generated_Code/MCUC1.c" FileDate="2018-05-05, 18:15:55" FileAge="1525558555566" FileType="45637" CompNumb="15" />
+      <File Name="Generated_Code/PE_Const.h" FileDate="2018-05-05, 18:11:46" FileAge="1525558306039" FileType="45637" />
+      <File Name="Sources/Events.c" FileDate="2018-05-05, 18:15:56" FileAge="1525558556411" FileType="131328" />
+      <File Name="Generated_Code/IO_Map.h" FileDate="2018-05-05, 18:11:46" FileAge="1525558306007" FileType="45637" />
+      <File Name="Generated_Code/Cpu.h" FileDate="2018-05-05, 18:15:56" FileAge="1525558556004" FileType="45637" CompNumb="4" />
+      <File Name="Generated_Code/WAIT1.h" FileDate="2018-05-05, 18:15:55" FileAge="1525558555484" FileType="45637" CompNumb="14" />
+      <File Name="Generated_Code/IO_Map.c" FileDate="2018-05-05, 18:11:46" FileAge="1525558306003" FileType="45637" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2018-05-05, 18:15:56" FileAge="1525558556029" FileType="45637" CompNumb="4" />
+      <File Name="Generated_Code/WAIT1config.h" FileDate="2018-05-05, 18:15:55" FileAge="1525558555474" FileType="45637" CompNumb="14" />
+      <File Name="Generated_Code/WAIT1.c" FileDate="2018-05-05, 18:15:55" FileAge="1525558555480" FileType="45637" CompNumb="14" />
+      <File Name="Generated_Code/PE_Types.h" FileDate="2018-05-05, 18:11:46" FileAge="1525558306045" FileType="45637" />
+      <File Name="Generated_Code/AD1.h" FileDate="2018-05-05, 18:15:55" FileAge="1525558555578" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/MCUC1config.h" FileDate="2018-05-05, 18:15:55" FileAge="1525558555488" FileType="45637" CompNumb="15" />
+      <File Name="Generated_Code/AD1.c" FileDate="2018-05-05, 18:15:55" FileAge="1525558555574" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/PE_Error.h" FileDate="2018-05-05, 18:11:46" FileAge="1525558306042" FileType="45637" />
+      <File Name="Documentation/led_SIGNALS.txt" FileDate="2018-05-05, 18:15:56" FileAge="1525558556858" FileType="3072" />
+      <File Name="Documentation/led_Settings.xml" FileDate="2018-05-05, 18:15:57" FileAge="1525558557307" FileType="3072" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>2</CodeGenReference>
+</CodeGenerationInfo>
