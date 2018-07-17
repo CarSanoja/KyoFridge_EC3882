@@ -1,1 +1,0 @@
-{"analogico_1": [], "analogico_2": [40], "digital_1": [0], "digital_2": [0]}
